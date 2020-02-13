@@ -1,50 +1,75 @@
-import React, { Component } from "react"
-import logo from "./logo.svg"
-import "./App.css"
+import React from 'react';
+import './App.sass';
+import Home from './Home';
+import ListProjects from './ListProjects';
+import $ from "jquery";
+import YouTube from 'react-youtube';
+import '@fortawesome/fontawesome-free/css/all.css';
 
-class LambdaDemo extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { loading: false, msg: null }
+export default class App extends React.Component {
+
+  toggleNavbar(e, addedClass, removedClass){
+    e.preventDefault();
+    $('#Project_navbar,#access_to_project').addClass(addedClass);
+    $('#Project_navbar,#access_to_project').removeClass(removedClass);
   }
 
-  handleClick = api => e => {
-    e.preventDefault()
-
-    this.setState({ loading: true })
-    fetch("/.netlify/functions/" + api)
-      .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }))
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    event.target.mute();
+  }
+  _onEnd(event) {
+    event.target.playVideo();
   }
 
-  render() {
-    const { loading, msg } = this.state
+  displayProjects(e, id, addedClass, removedClass){
+    e.preventDefault();
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(id).offset().top
+    }, 500);
+    $('#Project_navbar,#access_to_project').addClass(addedClass);
+    $('#Project_navbar,#access_to_project').removeClass(removedClass);
+  }
+
+  resizeViewport(){
+    const view = $(window).height();
+    $('#Home, #projects').height(view);
+  }
+  componentDidMount(){
+    this.resizeViewport();
+    window.addEventListener('resize', this.resizeViewport);
+  }
+
+  render(){
+
+      const opts = {
+        playerVars: { // https://developers.google.com/youtube/player_parameters
+          autoplay: 1,
+          controls: 0,
+          rel: 0,
+          showinfo: 0
+        }
+      }
 
     return (
-      <p>
-        <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
-        <button onClick={this.handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
-        <br />
-        <span>{msg}</span>
-      </p>
-    )
-  }
-}
+      <div id="App">
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <LambdaDemo />
-        </header>
+        <div className="video-background">
+          <div className="video-foreground">
+            <YouTube
+               videoId="q06qVueCQoo"
+               opts={opts}
+               onReady={this._onReady}
+               onEnd={this._onEnd}
+               className="video-iframe"
+             />
+          </div>
+        </div>
+
+        <Home dispProjectsCallback={this.displayProjects}/>
+        <ListProjects dispProjectsCallback={this.displayProjects}/>
+
       </div>
-    )
+    );
   }
 }
-
-export default App
