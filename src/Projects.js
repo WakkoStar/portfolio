@@ -4,14 +4,14 @@ module.exports = [
 
     resume :'Jeu de tir FPS',
 
-    origine: 'Elite Down est un projet que j\'ai commencé seul en septembre 2018'+
-    'et n\'est toujours pas abouti. Le jeu est pour l\'instant en version alpha afin de découvrir ses mécanismes.'+
-    'Réalisé sous une première version sur "Blueprint", une deuxième version est en dév sur "C++".',
+    origine: 'Elite Down est un projet que j\'ai commencé en septembre 2018 et fini en décembre 2019.'+
+    ' Le jeu est disponible sous plusieurs versions alphas : une en "blueprint" (langage visuel de programmation)' +
+    ' et une en "C++" avec la possiblité de jouer en multijoueur.',
 
-    description: 'Elite Down est un jeu de tir à la première personne. Le but du jeu est simple : capturer le pôle ou tuer tous ses ennemis. '+
-    'Lancés dans une arène en 2 contre 2, seuls les plus rapides et habiles ont une chance de s\'en sortir.',
+    description: 'Elite Down est un jeu de tir à la première personne. Le gameplay se veut très rapide et libre pour'+
+    ' que le joueur aie une multitude de possibilités pour se déplacer.',
 
-    outils: 'Unreal Engine, Blender',
+    outils: 'Unreal Engine, Blender, C++',
 
     liens:[
       {
@@ -40,10 +40,11 @@ module.exports = [
 
     origine: 'Dans le cadre de notre DUT MMI, nous devons réaliser un "projet tutoré". '+
     'Il s\'agit d\'un projet en groupe que l\'on doit réaliser durant notre formation. '+
-    'Nous avons donc crée un groupe de 6 personnes qui a pour nom Ora et pour projet un film d\'animation 3D qui sera disponible fin mars',
+    'Nous avons donc crée un groupe de 6 personnes qui a pour nom Ora et pour projet un film d\'animation 3D',
 
     description: 'À travers les âges, une étrange entité protège sa forêt contre différentes menaces. '+
-    'Après avoir traversé plusieurs péripéties, elle se retrouve finalement confrontée aux actions destructrices de l\'Homme.',
+    'Après avoir traversé plusieurs péripéties, elle se retrouve finalement confrontée aux actions destructrices de l\'Homme.'+
+    'Le film n\'a pas abouti car le temps de rendre nos plans prenait trop de temps',
 
     outils: 'Blender, FL Studio',
 
@@ -73,11 +74,11 @@ module.exports = [
     resume :'Site web interactif',
 
     origine: 'Un centre de réalité virtuelle m\'a contacté pour réaliser leur site web. '+
-    'J\'avais comme mission principale de réaliser un module de réservation. Le site est en développement depuis 4 mois, '+
-    'une version finale est bientôt disponible.',
+    'J\'avais comme mission principale de réaliser un module de réservation.'+
+    'Après 4 mois de développement le site est opérationnel.',
 
     description: 'Le site contient en détail une base de données de jeu modifiable,une interface pour créer des événements disponible' +
-    'sur le site, un module de réservation et de payement codé en Ajax et PHP',
+    ' sur le site, un module de réservation et de payement codé en Ajax et PHP',
 
     outils: 'WordPress, PHP, HTML/CSS, Ajax.',
 
