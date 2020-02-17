@@ -26,7 +26,7 @@ export default class Home extends React.Component {
           <div id="Links">
             <a href="https://soundcloud.com/hugo-del-pia/tracks">Soundcloud</a>
             <a href="https://www.linkedin.com/in/hugo-del-pia/">LInkedin</a>
-            <a href="http://hugodelpia.fr/assets/files/DELPIA-CV.pdf">Voir CV</a>
+            <a href="../assets/files/DELPIA-CV.pdf">Voir CV</a>
             <a href="mailto:delpiahugo@gmail.com">Contacter</a>
           </div>
         </section>
