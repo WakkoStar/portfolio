@@ -17,6 +17,7 @@ export default class ListProjects extends React.Component {
     }
   }
   displayHome(e, id, addedClass, removedClass){
+    e.preventDefault();
     this.props.dispProjectsCallback(e, id, addedClass, removedClass);
   }
 
@@ -27,16 +28,57 @@ export default class ListProjects extends React.Component {
   }
 
   displayProject(project,e){
+    e.preventDefault();
     $("#Interface").addClass('not-displayed').removeClass('displayed');
     setTimeout(() => {
       this.setState({project});
     },200);
     setTimeout(() => {$("#Interface").addClass('displayed').removeClass('not-displayed');}, 1000);
   }
+
+  displayProject_mobile(project,e){
+    e.preventDefault();
+
+    this.displayProject(project,e);
+    this.fetchProjets(e);
+  }
+
+  fetchProjets(e){
+    e.preventDefault();
+
+    let view = $(window).height();
+    $('#ProjectsNavbar>article').css('display', 'flex');
+    if($('#ProjectsNavbar').height() > view/2){
+      view = '9vw'
+      $('#ProjectsNavbar>article').css('display', 'none');
+    }
+    $('#ProjectsNavbar').height(view);
+
+    this.displayHome(e,'#projects', 'deselected', 'not-displayed')
+  }
   render(){
     var _project = this.state.project;
     return(
       <section id="projects">
+      <div id="ProjectsNavbar">
+        <button onClick={(e) =>this.displayHome(e,'#App', 'not-displayed', 'deselected')}>Retour</button>
+        <button onClick={(e) =>this.fetchProjets(e)}>Projets</button>
+        <article>
+          {Projects.map(
+              (project) => {
+                return (
+                  <ButtonProject
+                    titre={project.titre}
+                    desc={project.resume}
+                    onClickcallback={this.displayProject_mobile.bind(this, project)}
+                  />
+                )
+              }
+            )
+          }
+
+        </article>
+      </div>
       <div id="HomeNavbar"
       onMouseEnter={(e) => this.toggleNavbar(e, 'displayed', 'not-displayed')}
       onMouseLeave={(e) => this.toggleNavbar(e, 'not-displayed', 'displayed')}
@@ -67,7 +109,7 @@ export default class ListProjects extends React.Component {
                 (video) => {
                   return (
                     <div>
-                        <iframe src={video}>
+                        <iframe allowfullscreen="true" src={video}>
                         </iframe>
                     </div>
                   )
