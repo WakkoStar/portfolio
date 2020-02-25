@@ -35,6 +35,7 @@ export default class App extends React.Component {
     const view = $(window).height();
     $('#Home, #projects').height(view);
   }
+
   componentDidMount(){
     this.resizeViewport();
     window.addEventListener('resize', this.resizeViewport);
