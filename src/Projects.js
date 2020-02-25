@@ -4,12 +4,12 @@ module.exports = [
 
     resume :'Jeu de tir FPS',
 
-    origine: 'Elite Down est un projet que j\'ai commencé en septembre 2018 et fini en décembre 2019.'+
-    ' Le jeu est disponible sous plusieurs versions alphas : une en "blueprint" (langage visuel de programmation)' +
-    ' et une en "C++" avec la possiblité de jouer en multijoueur.',
+    origine: "Elite Down est un projet que j\'ai commencé en septembre 2018 et fini en décembre 2019.
+     Le jeu est disponible sous plusieurs versions alphas : une en blueprint (langage visuel de programmation)
+     et une en C++ avec la possiblité de jouer en multijoueur.",
 
-    description: 'Elite Down est un jeu de tir à la première personne. Le gameplay se veut très rapide et libre pour'+
-    ' que le joueur aie une multitude de possibilités pour se déplacer.',
+    description: "Elite Down est un jeu de tir à la première personne. Le gameplay se veut très rapide et libre pour
+     que le joueur aie une multitude de possibilités pour se déplacer.",
 
     outils: 'Unreal Engine, Blender, C++',
 
