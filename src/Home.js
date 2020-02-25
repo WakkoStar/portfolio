@@ -33,15 +33,13 @@ export default class Home extends React.Component {
 
         <section
           onMouseEnter={(e) => this.toggleNavbar(e, 'displayed','not-displayed')}
-          onMouseLeave={(e) => this.toggleNavbar(e, 'not-displayed','displayed')}
-          onClick={(e) =>this.displayProjects(e,'#projects', 'deselected', 'not-displayed')}
+          onClick={(e) =>this.displayProjects(e,'#projects', 'not-displayed','displayed')}
           className="not-displayed" id="Project_navbar">
         </section>
 
         <div id="access_to_project"
           onMouseEnter={(e) => this.toggleNavbar(e, 'displayed','not-displayed')}
-          onMouseLeave={(e) => this.toggleNavbar(e, 'not-displayed','displayed')}
-          onClick={(e) =>this.displayProjects(e,'#projects', 'deselected', 'not-displayed')}
+          onClick={(e) =>this.displayProjects(e,'#projects', 'not-displayed','displayed')}
           className="not-displayed">
             <h1>ACCEDER AUX PROJETS</h1>
             <span style={{fontSize:"3vw"}}>
