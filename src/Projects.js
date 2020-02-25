@@ -25,9 +25,9 @@ module.exports = [
     ],
 
     images:[
-      "url(http://hugodelpia.fr/assets/images/scenes/ecranmenu.jpg)",
-      "url(http://hugodelpia.fr/assets/images/scenes/hudjeu.jpg)",
-      "url(http://hugodelpia.fr/assets/images/scenes/mapscene.jpg)"
+      "url(assets/images/scenes/ecranmenu.jpg)",
+      "url(assets/images/scenes/hudjeu.jpg)",
+      "url(assets/images/scenes/mapscene.jpg)"
     ],
     videos:[
       "https://www.youtube.com/embed/KHlF_Jdogk8"
@@ -51,7 +51,7 @@ module.exports = [
     liens:[
       {
         label : "Scénario",
-        data: "http://hugodelpia.fr/assets/files/Scenario.pdf"
+        data: "assets/files/Scenario.pdf"
       },
       {
         label : "Site Web Ora",
@@ -59,10 +59,10 @@ module.exports = [
       }
     ],
     images:[
-      "url(http://hugodelpia.fr/assets/images/scenes/perso.jpg)",
-      "url(http://hugodelpia.fr/assets/images/scenes/Scene.jpg)",
-      "url(http://hugodelpia.fr/assets/images/scenes/Lumières.jpg)",
-      "url(http://hugodelpia.fr/assets/images/scenes/objet.jpg)"
+      "url(assets/images/scenes/perso.jpg)",
+      "url(assets/images/scenes/Scene.jpg)",
+      "url(assets/images/scenes/Lumières.jpg)",
+      "url(assets/images/scenes/objet.jpg)"
     ],
     videos:[
       "https://www.youtube.com/embed/X7r-kcvwcjI"
@@ -89,10 +89,10 @@ module.exports = [
       }
     ],
     images:[
-      "url(http://hugodelpia.fr/assets/images/scenes/ecranaccueil.png)",
-      "url(http://hugodelpia.fr/assets/images/scenes/game.jpg.png)",
-      "url(http://hugodelpia.fr/assets/images/scenes/horaires.png)",
-      "url(http://hugodelpia.fr/assets/images/scenes/reserv.png)"
+      "url(assets/images/scenes/ecranaccueil.png)",
+      "url(assets/images/scenes/game.jpg.png)",
+      "url(assets/images/scenes/horaires.png)",
+      "url(assets/images/scenes/reserv.png)"
     ],
     videos:[
 
