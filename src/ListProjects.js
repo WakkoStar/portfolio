@@ -37,8 +37,7 @@ export default class ListProjects extends React.Component {
   }
 
   displayProject_mobile(project,e){
-    e.preventDefault();
-
+    e.preventDefault()
     this.displayProject(project,e);
     this.fetchProjets(e);
   }
@@ -70,7 +69,7 @@ export default class ListProjects extends React.Component {
                   <ButtonProject
                     titre={project.titre}
                     desc={project.resume}
-                    onClickcallback={this.displayProject_mobile.bind(this, project)}
+                    onClickcallback={this.displayProject_mobile.bind(this, project))}
                   />
                 )
               }
