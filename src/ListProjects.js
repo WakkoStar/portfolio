@@ -69,7 +69,7 @@ export default class ListProjects extends React.Component {
                   <ButtonProject
                     titre={project.titre}
                     desc={project.resume}
-                    onClickcallback={this.displayProject_mobile.bind(this, project))}
+                    onClickcallback={this.displayProject_mobile.bind(this, project)}
                   />
                 )
               }
