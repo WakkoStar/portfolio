@@ -62,7 +62,7 @@ export default class ListProjects extends React.Component {
         </article>
         <article id="Interface" style={{color:'white'}} className="displayed">
 
-          <Carousel showIndicators={true} showThumbs={false} showStatus={false} autoPlay infiniteLoop>
+          <Carousel showIndicators={false} showThumbs={false} showStatus={false} infiniteLoop>
             {_project.videos.map(
                 (video) => {
                   return (
