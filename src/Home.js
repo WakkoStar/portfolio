@@ -21,7 +21,7 @@ export default class Home extends React.Component {
         <section id="Screen">
           <div id="Presentation">
             <h1>Hugo Del Pia</h1>
-            <h2>20 ans. Passionné de jeux-vidéos, de musique et de skate.</h2>
+            <h2>Développeur polyvalent et passionné</h2>
           </div>
           <div id="Links">
             <a href="https://soundcloud.com/hugo-del-pia/tracks">Soundcloud</a>
