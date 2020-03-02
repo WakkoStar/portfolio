@@ -74,7 +74,7 @@ module.exports = [
 
     description: 'Le site contient en détail une base de données de jeu modifiable,une interface pour créer des événements disponible sur le site, un module de réservation et de payement codé en Ajax et PHP',
 
-    evolution: "J'ai fait une première version en PHP avec l'aide de Wordpress. J'ai tout refait, une deuxième fois, en optimisant mon PHP. Le site était opérationnel. Notamment, le service de payement. qui prenait en charge Secure 3D.",
+    evolution: "J'ai fait une première version en PHP avec l'aide de Wordpress. J'ai tout refait, une deuxième fois, en optimisant mon PHP. Le site est opérationnel. Notamment, le service de payement. qui prend en charge Secure 3D.",
 
     outils: 'WordPress, PHP, HTML/CSS, Ajax.',
 
