@@ -4,12 +4,11 @@ module.exports = [
 
     resume :'Jeu de tir FPS',
 
-    origine: 'Elite Down est un projet que j\'ai commencé en septembre 2018 et fini en décembre 2019.'+
-    ' Le jeu est disponible sous plusieurs versions alphas : une en "blueprint" (langage visuel de programmation)' +
-    ' et une en "C++" avec la possiblité de jouer en multijoueur.',
+    origine: 'Inspiré du jeu Shootmania Storm, je voulais un renouveau du jeu. J\'ai donc crée un gameplay similaire à celui-ci sur Unreal Engine 4. Au fil du temps, le but du jeu est totalement différent.',
 
-    description: 'Elite Down est un jeu de tir à la première personne. Le gameplay se veut très rapide et libre pour'+
-    ' que le joueur aie une multitude de possibilités pour se déplacer.',
+    description: 'Elite Down est un jeu de tir à la première personne. Le but du jeu est de finir tout les niveaux, le plus rapidement possible. Chaque niveau est un parcours d\'obstacle. Si une erreur est comise, il doit refaire tout le niveau',
+
+    evolution: 'D\'abord voulant créer un jeu de tir en blueprint, je n\'ai pas réussi à implémenter le muttijoueur. J\'ai donc tout reprogrammé en C++ mais le multijoueur est vraiment compliqué à mettre en place. Je suis donc parti sur un jeu solo de plateforme, je suis en pleine création des niveaux. ',
 
     outils: 'Unreal Engine, Blender, C++',
 
@@ -38,13 +37,11 @@ module.exports = [
 
     resume :'Film d\'animation en 3D',
 
-    origine: 'Dans le cadre de notre DUT MMI, nous devons réaliser un "projet tutoré". '+
-    'Il s\'agit d\'un projet en groupe que l\'on doit réaliser durant notre formation. '+
-    'Nous avons donc crée un groupe de 6 personnes qui a pour nom Ora et pour projet un film d\'animation 3D',
+    origine: 'Dans le cadre de notre DUT MMI, nous devons réaliser un "projet tutoré". Il s\'agit d\'un projet en groupe que l\'on doit réaliser durant notre formation. Nous avons donc crée un groupe de 6 personnes qui a pour nom Ora et pour projet un film d\'animation 3D',
 
-    description: 'À travers les âges, une étrange entité protège sa forêt contre différentes menaces. '+
-    'Après avoir traversé plusieurs péripéties, elle se retrouve finalement confrontée aux actions destructrices de l\'Homme.'+
-    'Le film n\'a pas abouti car le temps de rendre nos plans prenait trop de temps',
+    description: 'À travers les âges, une étrange entité protège sa forêt contre différentes menaces. Après avoir traversé plusieurs péripéties, elle se retrouve finalement confrontée aux actions destructrices de l\'Homme',
+
+    evolution: 'Au départ, nous voulions animer un personnage suivant un scénario. Nous avons crée beaucoup de modèles 3D mais très long à rendre. Plus concrètement, un rendu du film durant 3 secondes étaient 8 heures de chargement dans la vie réelle. Ce temps d\'attente explique pourquoi le film est si pauvre en contenu. Cependant, l\'ambiance désiré est omniprésente.',
 
     outils: 'Blender, FL Studio',
 
@@ -73,12 +70,11 @@ module.exports = [
 
     resume :'Site web interactif',
 
-    origine: 'Un centre de réalité virtuelle m\'a contacté pour réaliser leur site web. '+
-    'J\'avais comme mission principale de réaliser un module de réservation.'+
-    'Après 4 mois de développement le site est opérationnel.',
+    origine: 'Un centre de réalité virtuelle m\'a contacté pour réaliser leur site web. J\'avais comme mission principale de réaliser un module de réservation. L\'objectif de ce site était de pouvoir réserver ses parties dessus et montrer le salon dans son ensemble.',
 
-    description: 'Le site contient en détail une base de données de jeu modifiable,une interface pour créer des événements disponible' +
-    ' sur le site, un module de réservation et de payement codé en Ajax et PHP',
+    description: 'Le site contient en détail une base de données de jeu modifiable,une interface pour créer des événements disponible sur le site, un module de réservation et de payement codé en Ajax et PHP',
+
+    evolution: "J'ai fait une première version en PHP avec l'aide de Wordpress. J'ai tout refait, une deuxième fois, en optimisant mon PHP. Le site était opérationnel. Notamment, le service de payement. qui prenait en charge Secure 3D. Malheureusement, l'entreprise a fait faillite et le site va bientot etre fermé. Actuellement j'ai l'ai mis en démonstration.",
 
     outils: 'WordPress, PHP, HTML/CSS, Ajax.',
 
@@ -95,7 +91,30 @@ module.exports = [
       "url(assets/images/scenes/reserv.png)"
     ],
     videos:[
+    ]
+  },
+  {
+    titre: 'Azure Groups',
 
+    resume :'Application Web dynamique',
+
+    origine: "L'outil sert à faciliter le processus de création d'un utilisateur. En effet, il délègue le processus d'inscription du service informatique au service du gestion des plateformes de l'entreprise.",
+
+    description: 'Azure Groups est une application web qui permet de controller des utilsateurs et membres de groupes provenant de Azure AD ( base de données pour utilisateurs d\'une entreprise)',
+
+    evolution: "Le développement s'est fait en React pour la création d'une interface dynamique et avec Microsoft Graph pour controler la base de données d'Azure AD. L'application est opérationelle est utilsable dans le service",
+
+    outils: 'React, Microsoft Graph',
+
+    liens:[
+    ],
+    images:[
+      "url(assets/images/scenes/connexion.png)",
+      "url(assets/images/scenes/invitation.png)",
+      "url(assets/images/scenes/groupes.png)"
+    ],
+    videos:[
     ]
   }
+
 ];

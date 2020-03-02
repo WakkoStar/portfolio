@@ -121,10 +121,12 @@ export default class ListProjects extends React.Component {
               )}
           </Carousel>
 
-          <h2>Origine</h2>
-          <p>{_project.origine}</p>
           <h2>Description</h2>
           <p>{_project.description}</p>
+          <h2>Origine</h2>
+          <p>{_project.origine}</p>
+          <h2>Evolution</h2>
+          <p>{_project.evolution}</p>
           <h2>Outils</h2>
           <p>{_project.outils}</p>
           <h2>Liens</h2>
