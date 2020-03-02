@@ -100,7 +100,7 @@ module.exports = [
 
     origine: "L'outil sert à faciliter le processus de création d'un utilisateur. En effet, il délègue le processus d'inscription du service informatique au service du gestion des plateformes de l'entreprise.",
 
-    description: 'Azure Groups est une application web qui permet de controller des utilsateurs et membres de groupes provenant de Azure AD ( base de données pour utilisateurs d\'une entreprise)',
+    description: 'Azure Groups est une application web qui permet de controler des utilisateurs et membres de groupes provenant de Azure AD ( base de données pour utilisateurs d\'une entreprise)',
 
     evolution: "Le développement s'est fait en React pour la création d'une interface dynamique et avec Microsoft Graph pour controler la base de données d'Azure AD. L'application est opérationelle est utilsable dans le service",
 
