@@ -15,7 +15,7 @@ module.exports = [
     liens:[
       {
         label : "Jouer à l'alpha",
-        data: "http://www.mediafire.com/file/lpeb3wk1bpcye9d/Elite_Down_0.2.0.zip/file"
+        data: "http://www.mediafire.com/file/wr80vvnkcdq3dek/EliteDown_0.3.a.zip/file"
       },
       {
         label : "Ressources du jeu",
@@ -29,6 +29,7 @@ module.exports = [
       "url(assets/images/scenes/mapscene.jpg)"
     ],
     videos:[
+      "https://www.youtube.com/embed/MqMxP0LhFuQ",
       "https://www.youtube.com/embed/KHlF_Jdogk8"
     ]
   },
