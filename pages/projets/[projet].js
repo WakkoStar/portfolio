@@ -26,7 +26,7 @@ export default function Projet() {
     if (!data) return <div>Loading...</div>
     
     const {titre, images, videos, description, liens} = data;
-    
+
     return(
         <Layout>
             <main className="projet">
@@ -60,7 +60,7 @@ export default function Projet() {
                                 {
                                     liens.map(({label, data}) => {
                                         return (
-                                            <a href="data">{label}</a>
+                                            <a href={data}>{label}</a>
                                         )   
                                     })
                                 }
