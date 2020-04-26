@@ -1,0 +1,1 @@
+{"ast":null,"code":"export function getAllProjectsLinks(projects) {\n  return projects.map(({\n    link\n  }) => {\n    return {\n      params: {\n        projet: link\n      }\n    };\n  });\n}","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { projects } from '../../data';\nexport default ((req, res) => {\n  return res.status(200).json(projects);\n});","map":null,"metadata":{},"sourceType":"module"}
