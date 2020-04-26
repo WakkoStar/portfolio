@@ -174,30 +174,6 @@ function Layout({
 
 /***/ }),
 
-/***/ "./lib/getAllProjectsLinks.js":
-/*!************************************!*\
-  !*** ./lib/getAllProjectsLinks.js ***!
-  \************************************/
-/*! exports provided: getAllProjectsLinks */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllProjectsLinks", function() { return getAllProjectsLinks; });
-function getAllProjectsLinks(projects) {
-  return projects.map(({
-    link
-  }) => {
-    return {
-      params: {
-        projet: link
-      }
-    };
-  });
-}
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
@@ -1871,14 +1847,12 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 /*!***********************************!*\
   !*** ./pages/projets/[projet].js ***!
   \***********************************/
-/*! exports provided: default, getStaticPaths, getStaticProps */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Projet; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! isomorphic-fetch */ "isomorphic-fetch");
@@ -1886,7 +1860,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
-/* harmony import */ var _lib_getAllProjectsLinks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib/getAllProjectsLinks */ "./lib/getAllProjectsLinks.js");
+/* harmony import */ var swr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swr */ "swr");
+/* harmony import */ var swr__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(swr__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "D:\\Documents\\GitHub\\portfolio\\pages\\projets\\[projet].js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1894,18 +1871,55 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-function Projet({
-  titre,
-  description,
-  images,
-  videos,
-  liens
-}) {
+
+
+const fetcher = async url => {
+  const res = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1___default()(url);
+  const data = await res.json();
+
+  if (res.status !== 200) {
+    throw new Error(data.message);
+  }
+
+  return data;
+};
+
+function Projet() {
+  const {
+    query
+  } = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])();
+  const {
+    data,
+    error
+  } = swr__WEBPACK_IMPORTED_MODULE_4___default()(() => query.projet && `/api/${query.projet}`, fetcher);
+  if (error) return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 23
+    }
+  }, error.message);
+  if (!data) return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 23
+    }
+  }, "Loading...");
+  const {
+    titre,
+    images,
+    videos,
+    description,
+    liens
+  } = data;
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 31,
       columnNumber: 9
     }
   }, __jsx("main", {
@@ -1913,21 +1927,21 @@ function Projet({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 32,
       columnNumber: 13
     }
   }, __jsx("nav", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 33,
       columnNumber: 17
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 34,
       columnNumber: 21
     }
   }, titre), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1935,21 +1949,21 @@ function Projet({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 37,
       columnNumber: 21
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 38,
       columnNumber: 25
     }
   }, "Retour aux projets"))), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 43,
       columnNumber: 17
     }
   }, images.map(image => {
@@ -1958,7 +1972,7 @@ function Projet({
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 46,
         columnNumber: 36
       }
     });
@@ -1968,7 +1982,7 @@ function Projet({
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29,
+        lineNumber: 51,
         columnNumber: 36
       }
     });
@@ -1976,14 +1990,14 @@ function Projet({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 54,
       columnNumber: 21
     }
   }, "Description"), __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 55,
       columnNumber: 21
     }
   }, description), liens.length > 0 ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, liens.map(({
@@ -1995,30 +2009,11 @@ function Projet({
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 63,
         columnNumber: 45
       }
     }, label);
   })) : "")));
-}
-async function getStaticPaths() {
-  const res = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1___default()('https://portfolio.hugodelpia.now.sh/api/projets');
-  const projets = await res.json();
-  const paths = Object(_lib_getAllProjectsLinks__WEBPACK_IMPORTED_MODULE_4__["getAllProjectsLinks"])(projets);
-  return {
-    paths,
-    fallback: false
-  };
-}
-async function getStaticProps({
-  params
-}) {
-  const res = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1___default()("https://portfolio.hugodelpia.now.sh/api/projets");
-  const projets = await res.json();
-  const findProjet = projets.filter(projets => projets.link === params.projet);
-  return {
-    props: findProjet[0]
-  };
 }
 
 /***/ }),
@@ -2054,6 +2049,17 @@ module.exports = require("isomorphic-fetch");
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
@@ -2098,6 +2104,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "swr":
+/*!**********************!*\
+  !*** external "swr" ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("swr");
 
 /***/ }),
 

@@ -1,10 +1,32 @@
 import fetch from 'isomorphic-fetch';
 import Link from 'next/link'
 import Layout from '../../components/layout'
+import useSWR from 'swr'
+import { useRouter } from 'next/router'
 
-import {getAllProjectsLinks} from '../../lib/getAllProjectsLinks'
+const fetcher = async url => {
+    const res = await fetch(url)
+    const data = await res.json()
 
-export default function Projet({titre, description,images, videos, liens }){
+    if (res.status !== 200) {
+        throw new Error(data.message)
+    }
+    return data
+}
+
+export default function Projet() {
+
+    const { query } = useRouter()
+    const { data, error } = useSWR(
+        () => query.projet && `/api/${query.projet}`,
+        fetcher
+    )
+
+    if (error) return <div>{error.message}</div>
+    if (!data) return <div>Loading...</div>
+    
+    const {titre, images, videos, description, liens} = data;
+    
     return(
         <Layout>
             <main className="projet">
@@ -52,23 +74,4 @@ export default function Projet({titre, description,images, videos, liens }){
             </main>
         </Layout>
     ) 
-}
-
-export async function getStaticPaths() {
-    const res = await fetch('https://portfolio.hugodelpia.now.sh/api/projets')
-    const projets = await res.json()
-    const paths = getAllProjectsLinks(projets)
-    return{
-        paths,
-        fallback: false
-    }
-}
-
-export async function getStaticProps({params}) {
-    const res =  await fetch("https://portfolio.hugodelpia.now.sh/api/projets")
-    const projets = await res.json()
-    const findProjet = projets.filter((projets) => projets.link === params.projet)
-    return {
-        props: findProjet[0]
-    }
 }

@@ -1,10 +1,6 @@
 import useSWR from 'swr'
 import Link from 'next/link'
 import Layout from '../../components/layout'
-import {useState, useEffect} from "react"
-import {gsap} from 'gsap'
-
-import $ from 'jquery'
 const fetcher = url => fetch(url).then(res => res.json())
 
 export default function Projets() {
@@ -12,8 +8,6 @@ export default function Projets() {
     const { data, error } = useSWR('/api/projets', fetcher)
     if (error) return <div>Failed to load</div>
     if (!data) return <div>Loading...</div>
-
-
     return (
         <Layout>
             <main className="projets">
