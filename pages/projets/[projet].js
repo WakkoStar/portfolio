@@ -60,7 +60,7 @@ export default function Projet() {
                                 {
                                     liens.map(({label, data}) => {
                                         return (
-                                            <a href={data}>{label}</a>
+                                            <a href={data} target="_blank">{label}</a>
                                         )   
                                     })
                                 }
