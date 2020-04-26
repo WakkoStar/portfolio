@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-unfetch';
+import fetch from 'isomorphic-fetch';
 import Link from 'next/link'
 import Layout from '../../components/layout'
 
@@ -54,9 +54,8 @@ export default function Projet({titre, description,images, videos, liens }){
     ) 
 }
 
-export async function getStaticPaths({ req }) {
-    const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
-    const res = await fetch(baseUrl + '/api/projets')
+export async function getStaticPaths() {
+    const res = await fetch('http://localhost:3000/api/projets')
     const projets = await res.json()
     const paths = getAllProjectsLinks(projets)
     return{
@@ -65,9 +64,8 @@ export async function getStaticPaths({ req }) {
     }
 }
 
-export async function getStaticProps({params, req}) {
-    const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
-    const res = await fetch(baseUrl + '/api/projets')
+export async function getStaticProps({params}) {
+    const res =  await fetch("/api/projets", {headers: {"Content-type": "application/json"}})
     const projets = await res.json()
     const findProjet = projets.filter((projets) => projets.link === params.projet)
     return {
