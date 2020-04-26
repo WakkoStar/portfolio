@@ -55,7 +55,7 @@ export default function Projet({titre, description,images, videos, liens }){
 }
 
 export async function getStaticPaths() {
-    const res = await fetch('http://localhost:3000/api/projets')
+    const res = await fetch('https://portfolio.hugodelpia.now.sh/api/projets')
     const projets = await res.json()
     const paths = getAllProjectsLinks(projets)
     return{
@@ -65,7 +65,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-    const res =  await fetch("/api/projets", {headers: {"Content-type": "application/json"}})
+    const res =  await fetch("https://portfolio.hugodelpia.now.sh/api/projets")
     const projets = await res.json()
     const findProjet = projets.filter((projets) => projets.link === params.projet)
     return {

@@ -2002,7 +2002,7 @@ function Projet({
   })) : "")));
 }
 async function getStaticPaths() {
-  const res = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1___default()('http://localhost:3000/api/projets');
+  const res = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1___default()('https://portfolio.hugodelpia.now.sh/api/projets');
   const projets = await res.json();
   const paths = Object(_lib_getAllProjectsLinks__WEBPACK_IMPORTED_MODULE_4__["getAllProjectsLinks"])(projets);
   return {
@@ -2013,11 +2013,7 @@ async function getStaticPaths() {
 async function getStaticProps({
   params
 }) {
-  const res = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1___default()("/api/projets", {
-    headers: {
-      "Content-type": "application/json"
-    }
-  });
+  const res = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1___default()("https://portfolio.hugodelpia.now.sh/api/projets");
   const projets = await res.json();
   const findProjet = projets.filter(projets => projets.link === params.projet);
   return {
