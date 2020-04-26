@@ -1,0 +1,474 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto
+}
+* {
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Roboto Black";
+    src: url("../public/font/Roboto-Black.ttf");
+}
+@font-face {
+    font-family: "AvenirNextLT";
+    src: url("../public/font/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+    font-family: "Roboto Thin";
+    src: url("../public/font/Roboto-LightItalic.ttf");
+}
+$title: "Roboto Black";
+$link : "AvenirNextLT";
+$paragraph : "Roboto Thin";
+
+@media screen and (min-width: 501px){
+    main.home{
+        background-image: url("/bg/hugodelpia.jpg");
+        background-size: cover;
+        background-position: center center;
+
+        div{
+            background-color: rgba(0,0,0,0.7);
+            height: 100vh;
+            width: 100%;
+            div{
+                background-color: transparent;
+            }
+
+            div:nth-of-type(1){
+                height: 45%;
+                padding: 2vw 0 0 2vw;
+                h3{
+                    margin: 0;
+                    font-family: $title;
+                    color: white;
+                    font-size: 1.4vw;
+                    line-height: 2vw;
+                }
+                p{
+                    margin: 0;
+                    font-family: $link;
+                    color: white;
+                    text-transform: uppercase;
+                    font-size: 1.2vw;
+                    line-height: 2vw;
+                    transition: all .2s;
+                    a{
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+                p:hover{
+                    margin-left: 1vw;
+                }
+            }
+            div:nth-of-type(2){
+                height: 4vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h1{
+                    margin: 0;
+                    font-family: $title;
+                    color: white;
+                    font-size: 3vw;
+                }
+            }
+            div:nth-of-type(3){
+                height: 6vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-family: $link;
+                    font-size: 1vw;
+                    border: 1px solid white;
+                    text-transform: uppercase;
+                    padding: 1vw 2vw;
+                    transition: all .3s;
+                    width: 11.1%;
+                }
+                a:hover{
+                    background-color: black;
+                    border-color: black;
+                }
+            }
+        }
+    }
+
+    main.projets{
+        height: 100vh;
+        display: flex;
+        overflow: hidden;
+        nav{
+            position: fixed;
+            height: 4vw;
+            background-color: rgba(0,0,0,0.7);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            a{
+                font-size: 1vw;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: $link;
+                text-align: center;
+                width: 100%;
+                color: white;
+                transition: all .2s;
+                padding: 1.5vw;
+            }
+            a:hover{
+                font-size: 1vw;
+                background-color: black;
+            }
+        }
+        div{
+            height:100%;
+            width: 25%;
+            margin: 0 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-position: center;
+            background-size: cover;
+            justify-content: center;
+            div{
+                width: 100%;
+                background-color: rgba(0,0,0,0.4);
+                h1{
+                    font-size: 2vw;
+                    color: white;
+                    text-align: center;
+                    text-transform: uppercase;
+                    width: 100%;
+                    font-family: $title;
+                    line-height: 2vw;
+                }
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-family: $link;
+                    font-size: 1vw;
+                    border: 1px solid white;
+                    text-transform: uppercase;
+                    padding: 1vw 2vw;
+                    transition: all .2s;
+                }
+                a:hover{
+                    background-color: black;
+                    border-color: black;
+                }
+            }                   
+        }
+    }
+    main.projet{
+        nav{
+            height: 5vw;
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            padding: 0 10%;
+            display: flex;
+            align-items: center;
+
+            h1{
+                font-size: 2vw;
+                color: rgba(0,0,0,0.7);
+                text-align: center;
+                text-transform: uppercase;
+                width: 40%;
+                font-family: $title;
+                line-height: 2vw;
+                text-align: left;
+            }
+            a{
+                font-size: 1.3vw;
+                color: rgba(0,0,0,0.4);
+                text-align: center;
+                text-transform: uppercase;
+                width: 60%;
+                font-family: $title;
+                line-height: 1.4vw;
+                text-decoration: none;
+                text-align: right;
+            }
+        }
+        div{
+            padding-top: 5vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            img, iframe{
+                width: 100%;
+                margin: 1px 0;
+            }
+            iframe{
+                height: 50vw;
+                border: 0;
+            }
+            h3{
+                text-transform: uppercase;
+                margin: 2vw auto 0;
+                width: 70%;
+                font-family: $title;
+                color: rgba(0,0,0,0.7);
+                font-size: 2vw;
+                line-height: 2vw;
+            }
+            p{
+                color: rgba(0,0,0,0.7);
+                margin: 0 auto 2vw;
+                width: 70%;
+                font-size: 1.4vw;
+                line-height: 2vw;
+                text-align: justify;
+                font-family: $paragraph;
+            }
+            a{
+                font-size: 1vw;
+                width: 70%;
+                border: 1px solid rgba(0,0,0,0.7);
+                color: rgba(0,0,0,0.7);
+                text-align: justify;
+                text-transform: uppercase;
+                padding: 1vw 0;
+                font-family: $link;
+                text-decoration: none;
+                text-align: center;
+                margin: 0 auto 1vw;
+                transition:  all .2s;
+            }
+            a:hover{
+                background-color:black;
+                color: white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    main.home {
+        background-image: url("/bg/hugodelpia.jpg");
+        background-size: cover;
+        background-position: center center;
+
+        div{
+            background-color: rgba(0,0,0,0.7);
+            height: 100vh;
+            width: 100%;
+
+            div:nth-of-type(1), div:nth-of-type(3) {
+                height: 22vh;
+            }
+    
+            div:nth-of-type(1) {
+                margin-right: 15%;
+                width: 85%;
+    
+                h3 {
+                    color: white;
+                    text-transform: uppercase;
+                    margin: 0;
+                    font-family: $title;
+                    font-size: 4.5vw;
+                    line-height: 6vw;
+                    padding: 5vw 0 0 5vw;
+                }
+    
+                p {
+                    color: white;
+                    text-transform: uppercase;
+                    margin: 0;
+                    font-family: $link;
+                    font-size: 4vw;
+                    line-height: 6vw;
+                    padding-left: 5vw;
+                    a{
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+    
+            div:nth-of-type(2) {
+                height: 56vh;
+                width: 100%;
+                display: flex;
+                background-color: transparent;
+                align-items: center;
+                justify-content: center;
+    
+                h1 {
+                    font-size: 10vw;
+                    color: white;
+                    text-align: center;
+                    font-family: $title;
+                    text-transform: uppercase;
+                    width: 40%;
+                    line-height: 10vw;
+                }
+            }
+    
+            div:nth-of-type(3) {
+                margin-left: 25%;
+                width: 75%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                a {
+                    text-decoration: none;
+                    color: white;
+                    font-family: $link;
+                    font-size: 4vw;
+                    border: 1px solid white;
+                    text-transform: uppercase;
+                    padding: 3vw 10vw;
+                }
+            }
+        }
+    }
+
+    main.projets{
+        display: block;
+        height: 100vh;
+        overflow: scroll;
+        nav{
+            position: fixed;
+            height: 15vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0,0,0,0.7);
+            a{
+                font-size: 5vw;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: $title;
+                text-align: center;
+                width: 100%;
+                color: white;
+            }
+        }          
+        div{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+            
+            div{
+                background-color: rgba(0,0,0,0.7);
+                h1 {
+                    font-size: 12vw;
+                    color: white;
+                    text-align: center;
+                    text-transform: uppercase;
+                    width: 40%;
+                    font-family: $title;
+                    line-height: 12vw;
+                }
+                a {
+                    text-decoration: none;
+                    color: white;
+                    font-family: $link;
+                    font-size: 4vw;
+                    border: 1px solid white;
+                    text-transform: uppercase;
+                    padding: 4vw 15vw;
+                }
+            }
+        }
+    }
+
+    main.projet {
+        width: 100%;
+        margin: 0 auto;
+        nav{
+            height: 15vh;
+            width: 100%;
+            padding: 0 5%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            background-color: white;
+            h1{
+                font-size: 10vw;
+                color: rgba(0,0,0,0.7);
+                text-align: left;
+                font-family: $title;
+                text-transform: uppercase;
+                width: 40%;
+                line-height: 10vw;
+            }
+            a {
+                font-size: 5vw;
+                text-decoration: none;
+                font-family: $title;
+                color: rgba(77, 69, 69, 0.767);
+                text-align: right;
+                text-transform: uppercase;
+                width: 50%;
+                margin-left: 10%;
+                line-height: 6vw;
+            }
+        }
+        div{
+            padding-top: 15vh;
+            display: flex;
+            flex-direction: column;
+            img, iframe{
+                width: 99%;
+                margin: 0 auto 4vw;
+            }
+            iframe{
+                border: 0;
+                height: 25vh;
+            }
+            h3{
+                text-transform: uppercase;
+                margin: 0 auto;
+                width: 90%;
+                font-family: $title;
+                color: rgba(0,0,0,0.7);
+                font-size: 5vw;
+                line-height: 5vw;
+            }
+            p{
+                color: rgba(0,0,0,0.7);
+                margin: 0 auto 4vw;
+                width: 90%;
+                font-size: 5vw;
+                line-height: 5.6vw;
+                text-align: justify;
+                font-family: $paragraph;
+            }
+            a{
+                font-size: 4vw;
+                width: 90%;
+                border: 1px solid rgba(0,0,0,0.7);
+                color: rgba(0,0,0,0.7);
+                text-align: justify;
+                text-transform: uppercase;
+                padding: 2vw 0;
+                font-family: $link;
+                text-decoration: none;
+                text-align: center;
+                margin: 0 auto 4vw;
+            }
+        }
+    }
+    
+}
+
+
