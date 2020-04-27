@@ -48,7 +48,7 @@ export default function Projet() {
                     }
                     {
                         videos.map((video) => {
-                            return <iframe src={video}/>
+                            return <iframe src={video} allowFullScreen/>
                         })
                     }
                     <h3>Description</h3> 

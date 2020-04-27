@@ -48,11 +48,7 @@ export const projects = [{
     ],
     liens: [{
             label: "Scénario",
-            data: " files/Scenario.pdf"
-        },
-        {
-            label: "Site Web Ora",
-            data: "http://ora-animation.fr/"
+            data: "../../files/Scenario.pdf"
         }
     ]
 },
@@ -86,8 +82,18 @@ export const projects = [{
     link: 'jeremy-capeau',
     resume: 'Application Web dynamique',
     thumbnail: '../../thumbnail/parfum4.jpg',
-    description: '',
-    images: [],
+    description: 'jeremycapeau.fr est un book pour Jérémy Capeau, un photographe / vidéaste. \
+    Le site est entièrement personnalisable, il possède un contrôle total sur son contenu \
+    (ajout, suppresion, édition, déplacement). jeremycapeau.fr est codé avec le stack MERN \
+    (MongoDB, Express, React, Node).',
+    images: [
+        "../../images/jc-support.png",
+        "../../images/ecranaccueil-jc.png",
+        "../../images/jc-mobile.png",
+        "../../images/ecranmenu-jc.png",
+        "../../images/dashboard-jc-1.png",
+        "../../images/dashboard-jc-2.png"
+    ],
     videos: [],
     liens: [{
         label: "Aller sur le site",
